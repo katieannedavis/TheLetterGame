@@ -49,8 +49,6 @@ class TitleCard(QWidget):
         btn = QPushButton('The Letter Game \n Press to Play', self)
         btn.clicked.connect(self.playInstructions)
         btn.clicked.connect(self.close)
-
-        #btn.resize(btn.sizeHint())
         btn.move(20,400)
 
         self.setStyleSheet("""
