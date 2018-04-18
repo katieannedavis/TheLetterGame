@@ -1,7 +1,7 @@
 # The Letter Game
 
 ## Description
-This is a children's program that sounds out the letter pressed on the keyboard. It is a GUI program written in Python 3 with the PyQt5 library. Inspired by a program my father wrote in Basic for me as a child.
+This is a children's program that sounds out the letter pressed on the keyboard. It is a GUI program written in Python 3 with the PyQt5 library.
 
 ## Dependencies
 * Python 3
