@@ -6,12 +6,10 @@ This is a children's program that sounds out the letter pressed on the keyboard.
 ## Dependencies
 * Python 3
 * Pyqt5
-* Tkinter
-* Playsound
-* Gtts (Google text to speech)
+* pyttsx3 
 
 ## Installation
-Install dependencies for program, then either clone or download zip file. Be sure to keep the sound file within the main game folder.
+Install dependencies for program, then either clone or download zip file. The sound file is not needed for game.
 
 ## MIT License
 Copyright 2018 Kathleen Davis
