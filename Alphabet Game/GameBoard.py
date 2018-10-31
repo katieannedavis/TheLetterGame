@@ -10,7 +10,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
-        MainWindow.setObjectName("MainWindow")
+        MainWindow.setObjectName("LetterGame")
         MainWindow.setWindowModality(QtCore.Qt.ApplicationModal)
         MainWindow.resize(1043, 640)
         icon = QtGui.QIcon()
@@ -35,7 +35,7 @@ class Ui_MainWindow(object):
         self.Letter_Label.setAutoFillBackground(False)
         self.Letter_Label.setText("")
         self.Letter_Label.setTextFormat(QtCore.Qt.PlainText)
-        self.Letter_Label.setPixmap(QtGui.QPixmap("ABC Sloth.jpg"))
+        self.Letter_Label.setPixmap(QtGui.QPixmap("ABC_Sloth.jpg"))
         self.Letter_Label.setScaledContents(False)
         self.Letter_Label.setAlignment(QtCore.Qt.AlignCenter)
         self.Letter_Label.setTextInteractionFlags(QtCore.Qt.LinksAccessibleByMouse)
@@ -54,7 +54,7 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
+        MainWindow.setWindowTitle(_translate("LetterGame", "LetterGame"))
         self.actionExit.setText(_translate("MainWindow", "Exit"))
         self.actionExit.setShortcut(_translate("MainWindow", "Ctrl+Q"))
 

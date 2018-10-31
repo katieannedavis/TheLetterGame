@@ -1,9 +1,9 @@
 from GameBoard import Ui_MainWindow
-from PyQt5 import QtWidgets, QtCore, QtGui
+from PyQt5 import QtWidgets
 from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import QAction
 from PyQt5.QtGui import QIcon
-import pyttsx3
+import pygame
 
 
 class GameWindow(QtWidgets.QMainWindow, Ui_MainWindow):
@@ -24,14 +24,13 @@ class GameWindow(QtWidgets.QMainWindow, Ui_MainWindow):
 
     def exit_clicked(self):
         say = "Goodbye"
-        rate = 150
-        Speech.__init__(say, rate)
+        Speech.__init__(say)
         quit()
 
     def intro(self):
-        say = "A, B, C, D, E, F, G, would, you, like, to, play, a, game, with, me?"
-        rate = 250
-        Speech.__init__(say , rate)
+        pygame.mixer.init(frequency=200000, size=-16, channels=2, buffer=4096)
+        pygame.mixer.music.load('letters/hello.mp3')
+        pygame.mixer.music.play(0)
 
     def keyPressEvent(self, e):
         font_size = "300px"
@@ -142,7 +141,6 @@ class GameWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             back_color = "rgb(217, 217, 217)"
         elif e.key() == Qt.Key_Escape:
             letter = "Goodbye"
-            Speech.__init__(letter, 150)
             quit()
         else:
             letter = "Not a letter."
@@ -150,8 +148,7 @@ class GameWindow(QtWidgets.QMainWindow, Ui_MainWindow):
             font_size = "100px"
             back_color = "white"
         self.screen(letter, font_color, back_color, font_size)
-        speech_rate = 150
-        Speech.__init__(letter, speech_rate)
+        Speech.__init__(letter)
 
     def screen(self, text, font, back, size):
         self.Letter_Label.setText(text)
@@ -167,16 +164,11 @@ class GameWindow(QtWidgets.QMainWindow, Ui_MainWindow):
 
 
 class Speech:
-    def __init__(text, speed):
-        engine = pyttsx3.init("sapi5")
-        zira = "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech\Voices\Tokens\TTS_MS_EN-US_ZIRA_11.0"
-        engine.setProperty('voice', zira)
-        engine.setProperty('rate', speed)
-        engine.setProperty('age', '15')
-        try:
-            engine.say(text)
-            engine.runAndWait()
-            engine.stop()
-        # engine needs time to complete
-        except RuntimeError:
-            print ("Wait")
+    def __init__(text):
+        if text == 'Goodbye':
+            pygame.mixer.music.load('letters/goodbye.mp3')
+        elif text == 'Not a letter.':
+            pygame.mixer.music.load('letters/NotALetter.mp3')
+        else:
+            pygame.mixer.music.load('letters/'+text+'.mp3')
+        pygame.mixer.music.play(0)
