@@ -6,10 +6,19 @@ This is a children's program that sounds out the letter pressed on the keyboard.
 ## Dependencies for development version
 * Python 3 installed from python website 
 * Pyqt5 installed on command line with pip: pip install pyqt5
-* pygame installed on command line with pip: pip install pygame 
+* pygame installed on command line with pip: pip install pygame
+### In the Alphabet Game folder, you only need:
+1. The letters folder (it holds all of the needed mp3s)
+2. exit.png
+3. ABC_Sloth.jpg
+4. icon.ico
+5. main.py
+6. GameFunctions.py
+7. GameBoard.py (generated from the pyqt5 designer)
+8. LetterGame.spec (This is the document that pyinstaller used to package the program via command line: pyinstaller --clean LetterGame.spec)
 
-## Installation
-Install dependencies for program, then either clone or download zip file. The sound file is not needed for game.
+## Installation for executable version
+* Download zip file, all files in the Alphabet Game folder are needed to run the exe file. When installing on your computer, you can right click on the exe file and pin to your start menu.
 
 ## MIT License
 Copyright 2018 Kathleen Davis
