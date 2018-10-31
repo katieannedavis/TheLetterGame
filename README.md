@@ -3,10 +3,10 @@
 ## Description
 This is a children's program that sounds out the letter pressed on the keyboard. It is a GUI program written in Python 3 with the PyQt5 library.
 
-## Dependencies
-* Python 3
-* Pyqt5
-* pyttsx3 
+## Dependencies for development version
+* Python 3 installed from python website 
+* Pyqt5 installed on command line with pip: pip install pyqt5
+* pygame installed on command line with pip: pip install pygame 
 
 ## Installation
 Install dependencies for program, then either clone or download zip file. The sound file is not needed for game.
